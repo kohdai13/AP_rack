@@ -11,12 +11,6 @@ class User < ApplicationRecord
   has_one_attached :profile_image
 
 
-
-  validates :name, presence: true
-  validates :nickname, presence: true
-  validates :gender, presence: true
-  validates :introduction, presence: true
-
   # is_deletedがfalseならtrueを返すようにしている
   def active_for_authentication?
     super && (is_deleted == false)

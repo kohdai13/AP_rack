@@ -1,24 +1,23 @@
-<h2>マイページ</h2>
 <div class="container">
   <div class="row">
     <div class="col-3">
+      <h2>マイページ</h2>
       <table class="side-table">
         <tr>
-          <%= image_tag user.get_profile_image, size:'100x100' %>  
+          <%= image_tag @user.get_profile_image, size:'100x100' %>
         </tr>
         <tr>
           <th>ニックネーム</th>
-          <th><%= user.nickname %></th>
+          <th><%= @user.nickname %></th>
         </tr>
         <tr>
           <th>自己紹介</th>
-          <th><%= user.introduction %></th>
+          <th><%= @user.introduction %></th>
         </tr>
       </table>
-      <%= link_to edit_user_path(user) do %>
+      <%= link_to edit_user_path(@user) do %>
         <i class="fas fa-user-cog"></i>プロフィール編集
       <% end %>
-      <!--後ほどリンク入れる-->
       <p>
         <i class="fas fa-heart"></i>お気に入り一覧
       </p>
@@ -36,10 +35,10 @@
             <div>
               <%= link_to shop_path(shop) do %>
                 <%= image_tag shop.shop_image, size: "200x150" %>
-              <%# end %>
+              <% end %>
             </div>
             <div><%= shop.name %></div>
-            <div><%#= いいねカウント %></div>
+            <div>いいねカウント %</div>
           </div>
         <% end %>
       </div>

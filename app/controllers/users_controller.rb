@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @shops = @user.shop
+    @shops = @user.shops
   end
 
   def edit
@@ -21,7 +21,10 @@ class UsersController < ApplicationController
     end
   end
 
-  #退会画面を表示するためのアクション
+  def unsubscribe
+  end
+
+
   def withdraw
     @user = User.find(params[:id])
     @user.update(is_deleted: true)

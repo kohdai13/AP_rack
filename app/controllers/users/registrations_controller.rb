@@ -67,6 +67,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_in_path_for(resource)
-    user_path(user_customer)
+    user_path(current_user.id)
   end
 end
