@@ -4,4 +4,13 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'about' => 'homes#about'
   
+  
+  resources :shops, only: [:index,:show,:edit,:create,:destroy,:update]do
+    resource :favorites, only: [:create, :destroy]
+    resources :shop_comments, only: [:create, :destroy]
+  end
+  
+  resources :users, only: [:index,:show,:edit,:update]
+  
+  
 end
