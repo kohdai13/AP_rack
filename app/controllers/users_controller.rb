@@ -23,12 +23,11 @@ class UsersController < ApplicationController
 
   #退会画面を表示するためのアクション
   def withdraw
-  end
-
-  def switch
-    if @user.update(is_deleted: true)
-      sign_out current_user #URLを踏ませずにコントローラーから直接サインアウトの指示を出す（device公式)
-    end
+    @user = User.find(params[:id])
+    #is_deletedカラムをtrueに変更することにより削除フラグを立てる
+    @user.update(is_deleted: true)
+    reset_session
+    flash[:notice] = "退会処理を実行いたしました"
     redirect_to root_path
   end
 

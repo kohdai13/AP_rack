@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:index,:show,:edit,:update]
+  #退会確認画面
+  get '/users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+  #論理削除用のルーティング
+  get '/users/:id/withdraw' => 'users#withdraw', as: 'withdraw'
   
   
 end

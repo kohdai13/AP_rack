@@ -7,17 +7,22 @@ class User < ApplicationRecord
   has_many :shops, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :shop_comments, dependent: :destroy
-  
+
   has_one_attached :profile_image
-  
-  
-  
+
+
+
   validates :name, presence: true
   validates :nickname, presence: true
   validates :gender, presence: true
   validates :introduction, presence: true
-  
-  
+
+  # is_deletedがfalseならtrueを返すようにしている
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
+
+
   def get_profile_image
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
   end
