@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-3">
+      <h2 class="offset-2">投稿編集</h2>
+    </div>
+    <%= form_with model: @shop, url: shop_path do |f| %>
+      <div class="row d-flex justify-content-start mt-3">
+        <div class="col-2 mt-2">
+          <%= f.label :ショップ画像, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.file_field :image_id, class: "form-control-file user_image", accept: 'image/*' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="col-2 mt-2">
+          <%= f.label :ショップ名, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="col-2 mt-2">
+          <%= f.label :ショップのジャンル, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%#= f.select :genre, ['旗艦店', 'セレクトショップ', '古着屋'], {include_blank: 'ジャンル選択ボックス'}, class: 'sample' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="col-2 mt-2">
+          <%= f.label :ショップの住所, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="col-2 mt-2">
+          <%= f.label :ショップの取扱ブランド, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.text_area :brand, class: 'form-control' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="form-group col-2 mt-2" id="star">
+          <%= f.label :評価, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.hidden_field :rate, id: :review_star, class:'form-control' %>
+        </div>
+
+        <script>
+        $(document).on('turbolinks:load', function() {
+          $('#star').empty();
+          $('#star').raty({
+            size     : 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            scoreName: 'shop[rate]',
+            half: true,
+          });
+        })
+        </script>
+        <div class="col-6"></div>
+
+        <div class="col-2 mt-2">
+          <%= f.label :口コミ内容, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="col-2"></div>
+        <div class="col-4 mt-2">
+          <%= f.submit "変更を保存", class: 'btn btn-sm btn-success mt-3' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

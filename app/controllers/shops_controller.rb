@@ -1,15 +1,15 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_user!
 
   def new
-    @shops = Shop.new
+    @shop = Shop.new
   end
 
   def create
     @shop = Shop.new(shop_params)
     @shop.user_id = current_user.id
-    if @user.save
-      redirect_to user_path(@user), notice: "投稿が成功しました！"
+    if @shop.save
+      redirect_to shop_path(@shop), notice: "投稿が成功しました！"
     else
       render 'new'
     end
@@ -35,7 +35,7 @@ class ShopsController < ApplicationController
     end
   end
 
-  def updeate
+  def update
     @shop = Shop.find(params[:id])
     if @shop.update(shop_params)
       redirect_to shop_path(@shop), notice: "更新が成功しました！"
