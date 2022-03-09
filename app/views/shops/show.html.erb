@@ -13,7 +13,7 @@
         </tr>
         <tr class="brown-border">
           <td class="table-secondary">ショップのジャンル</td>
-          <td><%#= @shop.genre %></td>
+          <td><%= @shop.genre %></td>
         </tr>
         <tr class="brown-border">
           <td class="table-secondary">ショップの取扱ブランド</td>
@@ -31,6 +31,10 @@
           <td>
             <%= render "favorites/btn", shop: @shop %>
           </td>
+        </tr>
+        <tr class="brown-border">
+          <td class="table-secondary">コメント件数</td>
+          <td><%= @shop.shop_comments.count %></td>
         </tr>
       </table>
 
@@ -50,6 +54,15 @@
           <%= link_to 'Destroy', @shop, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_shop_#{@shop.id}"%>
         <% end %>
       </div>
+    </div>
+    <div class="col-md-4">
+      <table class='shop_comments'>
+        <%= render 'shop_comments/index', shop: @shop %>
+      </table>
+      <%= form_with model:[@shop, @shop_comment], local: false do |f| %>
+        <%= f.text_area :comment, rows:'5', placeholder: "コメントを入力して下さい", class: "form-control" %>
+        <%= f.submit "  送信  " %>
+      <% end %>
     </div>
   </div>
 </div>

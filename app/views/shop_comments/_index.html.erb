@@ -1,0 +1,15 @@
+<% shop.shop_comments.each do |shop_comment| %>
+  <tr>
+    <td><%= link_to user_path(shop_comment.user) do %>
+          <%= image_tag shop_comment.user.get_profile_image, size:"100x100" %></br>
+          <%= shop_comment.user.nickname %>
+        <% end %>
+    </td>
+    <td><%= shop_comment.comment %></td>
+    <td>
+      <% if shop_comment.user == current_user %>
+        <%= link_to "destroy", shop_shop_comment_path(shop_comment.shop, shop_comment), method: :delete, remote: true, class: "btn btn-danger" %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
