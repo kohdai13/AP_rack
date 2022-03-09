@@ -4,8 +4,12 @@
       <%= image_tag 'chris-reyem-oJoeGnj8OMM-unsplash.jpg', size: "400x350" %>
     </div>
     <div class="col-md-8">
-      <h2>ようこそアパレルショップRACKへ！</h2>
-      <strong class="red-border px-3 pb-1">会員登録は<%= link_to "こちらへ", new_user_registration_path %></strong>
+      <% if user_signed_in? %>
+        <h2>ようこそアパレルショップRACKへ！</h2>
+      <% else %>
+        <h2>ようこそアパレルショップRACKへ！</h2>
+        <strong class="red-border px-3 pb-1">会員登録は<%= link_to "こちらへ", new_user_registration_path %></strong>
+      <% end %>
     </div>
   </div>
 </div>
