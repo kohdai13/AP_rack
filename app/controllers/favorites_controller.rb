@@ -1,4 +1,9 @@
 class FavoritesController < ApplicationController
+
+  def index
+    @shops = current_user.shops.order(updated_at: "DESC").page(params[:page]).per(10)
+  end
+
   def create
     shop = Shop.find(params[:shop_id])
     favorite = current_user.favorites.new(shop_id: shop.id)
