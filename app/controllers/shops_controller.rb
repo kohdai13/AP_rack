@@ -16,8 +16,7 @@ class ShopsController < ApplicationController
   end
 
   def index
-    #ページネーションをつけたいデータに.page(params[:page])を追加 per(10)⇨1ページあたり表示したい数
-    @shops = current_user.shops.order(updated_at: "DESC").page(params[:page]).per(10)
+    @shops = Shop.all
   end
 
   def show
