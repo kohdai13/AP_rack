@@ -27,14 +27,16 @@
           </td>
         </tr>
         <tr class="brown-border">
-          <td class="table-secondary">お気に入りの数</td>
-          <td>
-            <%= render "favorites/btn", shop: @shop %>
+          <td class="table-secondary">お気に入り</td>
+          <td id="shop_<%= @shop.id %>" class="favorite-btn">
+            <%= render "favorites/favorite-btn", shop: @shop %>
           </td>
         </tr>
         <tr class="brown-border">
           <td class="table-secondary">コメント件数</td>
-          <td><%= @shop.shop_comments.count %></td>
+          <td class="comments-count">
+            <%= @shop.shop_comments.count %>
+          </td>
         </tr>
       </table>
 

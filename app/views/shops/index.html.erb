@@ -8,7 +8,7 @@
           <%= image_tag shop.shop_image, size: "200x150" %>
         <% end %>
         <table class="table-box">
-          <tr>
+          <tr >
             <th>ショップ</th>
             <td><%= shop.name %></td>
           </tr>
@@ -30,11 +30,15 @@
           </tr>
           <tr>
             <th>お気に入り</th>
-            <td><%= render "favorites/btn", shop: shop %></td>
+            <td id="shop_<%= shop.id %>" class="favorite-btn">
+              <%= render "favorites/favorite-btn", shop: shop %>
+            </td>
           </tr>
         </table>
       </div>
     <% end %>
-
+    <div>
+      <%= paginate @shops %>
+    </div>
   </div>
 </div>
