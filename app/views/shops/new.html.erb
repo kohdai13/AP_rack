@@ -44,10 +44,11 @@
           <%= f.text_area :brand, class: 'form-control' %>
         </div>
         <div class="col-6"></div>
-        
-        
-        <%= f.label :star,'評価 ', class:'col-md-3 col-form-label' %>
-　　　　<div class="form-group" id="star">
+
+        <div class="col-2 mt-2">
+          <%= f.label :star,'評価 ', class: 'mt-1' %>
+        </div>
+　　　　<div class="col-8 mt-2 " id="star">
 　　　　  <%= f.hidden_field :star, id: :review_star %>
         </div>
 
