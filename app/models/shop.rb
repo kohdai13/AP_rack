@@ -18,4 +18,9 @@ class Shop < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
+  
+  def self.looks(search, word)
+    @shop = Shop.all
+  end
+  
 end

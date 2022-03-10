@@ -8,6 +8,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
+import "jquery"
+window.$ = window.jQuery = require('jquery');
+require('packs/raty')
 
 
 Rails.start()
