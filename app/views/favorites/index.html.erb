@@ -3,12 +3,10 @@
   <div class="row">
     <% @shops.each do |shop| %>
       <% if user_signed_in? && Favorite.favorite_method(shop, current_user) %>
-    		<div class="col-md-3">
+    		<div class="col-lg-3 col-md-6 mb-4">
     		  <%= link_to shop_path(shop) do %>
             <%= image_tag shop.shop_image, size: "200x150" %>
           <% end %>
-        </div>
-        <div class="col-md-9">
           <table class="table-box">
             <tr>
               <th>ショップ</th>
