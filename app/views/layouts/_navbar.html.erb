@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-white">
   <div class="container">
-    <a class="navbar-brand" href="/"><span>アパレルショップRACK</span></a>
+    <a class="navbar-brand" href="/"><%= image_tag 'logo.png', :size =>'150x150' %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,38 +8,38 @@
       <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
           <li>
-            <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
+            <%= link_to user_path(current_user),class: 'nav-link text-dark' do %>
               <i class="fas fa-home"></i> MyPage
             <% end %>
           </li>
           <li>
-            <%=  link_to shops_path ,class: 'nav-link text-light' do %>
+            <%=  link_to shops_path ,class: 'nav-link text-dark' do %>
               <i class="fas fa-store-alt"></i> Shops
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
+            <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-dark' do %>
               <i class="fas fa-sign-out-alt"></i> Logout
             <% end %>
           </li>
         <% else %>
           <li>
-            <%= link_to root_path,class: 'nav-link text-light' do %>
+            <%= link_to root_path,class: 'nav-link text-dark' do %>
               <i class="fas fa-home"></i> Home
             <% end %>
           </li>
           <li>
-            <%= link_to about_path,class: 'nav-link text-light' do %>
+            <%= link_to about_path,class: 'nav-link text-dark' do %>
               <i class="fas fa-link"></i> About
             <% end %>
           </li>
           <li>
-            <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
+            <%= link_to new_user_registration_path,class: 'nav-link text-dark' do %>
               <i class="fas fa-user-plus"></i> Signup
             <% end %>
           </li>
           <li>
-            <%= link_to new_user_session_path ,class: 'nav-link text-light' do %>
+            <%= link_to new_user_session_path ,class: 'nav-link text-dark' do %>
               <i class="fas fa-sign-in-alt"></i> Login
             <% end %>
           </li>

@@ -1,15 +1,14 @@
-<div class="container my-5">
-  <div class="row">
-    <div class="col-md-4">
-      <%= image_tag 'chris-reyem-oJoeGnj8OMM-unsplash.jpg', size: "400x350" %>
-    </div>
-    <div class="col-md-8">
-      <% if user_signed_in? %>
-        <h2>ようこそアパレルショップRACKへ！</h2>
-      <% else %>
-        <h2>ようこそアパレルショップRACKへ！</h2>
-        <strong class="red-border px-3 pb-1">会員登録は<%= link_to "こちらへ", new_user_registration_path %></strong>
-      <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="top">
+      <div class="top_text">
+        <% if user_signed_in? %>
+          <h2>Welcome to ApprelShopRACK！</h2>
+        <% else %>
+          <h2>Welcome to ApprelShopRACK！</h2>
+          <strong class="red-border px-3 pb-1">会員登録は<%= link_to "こちらへ", new_user_registration_path %></strong>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
