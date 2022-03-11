@@ -15,10 +15,10 @@
           <th><%= @user.introduction %></th>
         </tr>
       </table>
-      <%= link_to edit_user_path(@user) do %>
+      <%= link_to edit_user_path(@user), class: "btn btn-outline-info" do %>
         <i class="fas fa-user-cog"></i>プロフィール編集<br>
       <% end %>
-      <%= link_to user_favorites_path(@user) do %>
+      <%= link_to user_favorites_path(@user) ,class: "btn btn-outline-info" do %>
         <i class="fas fa-star"></i>お気に入り一覧
       <% end %>
     </div>
@@ -38,6 +38,8 @@
               <% end %>
             </div>
             <div><%= shop.name %></div>
+            <div><%= shop.address %></div>
+            <div><%= render "shops/static_rate", shop: shop %></div>
           </div>
         <% end %>
       </div>
