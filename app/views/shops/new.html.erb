@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-3">
     <div class="col-3">
-      <h2 class="title-textoffset-2">新規投稿</h2>
+      <h2 class="title-text offset-2">新規投稿</h2>
     </div>
     <%= form_with model: @shop, url: shops_path do |f| %>
       <div class="row d-flex justify-content-start mt-3">
@@ -48,8 +48,8 @@
         <div class="col-2 mt-2">
           <%= f.label :star,'評価 ', class: 'mt-1' %>
         </div>
-　　　　<div class="col-8 mt-2 " id="star">
-　　　　  <%= f.hidden_field :star, id: :review_star %>
+       <div class="col-8 mt-2 " id="star">
+         <%= f.hidden_field :star, id: :review_star, class:'form-control' %>
         </div>
 
         <script>
