@@ -1,32 +1,49 @@
-<%= form_with model: @inquiry, url: inquiry_confirm_path do |f| %>
-  <div class="page-header">
-    <h1>お問い合わせ</h1>
-  </div>
-
-  <% if @inquiry.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <strong>入力内容にエラーがあります</strong>
-      <ul>
-        <% @inquiry.errors.each do |attr, msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-3">
+      <h2 class="offset-2">お問い合わせ</h2>
     </div>
-  <% end %>
+    <%= form_with model: @inquiry, url: inquiry_confirm_path do |f| %>
+      <% if @inquiry.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <strong>入力内容にエラーがあります</strong>
+          <ul>
+            <% @inquiry.errors.each do |attr, msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row d-flex justify-content-start mt-3">
+        <div class="col-2 mt-2">
+          <%= f.label :名前（必須）, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="col-6"></div>
 
-  <table class="table">
-    <tr>
-      <th>名前<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :name %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :email %></td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td><%= f.text_area :message %></td>
-    </tr>
-  </table>
-  <%= f.submit '確認', class: 'btn btn-primary' %>
-<% end %>
+        <div class="col-2 mt-2">
+          <%= f.label :メールアドレス（必須）, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="col-2 mt-2">
+          <%= f.label :お問い合わせ内容, class: 'mt-1' %>
+        </div>
+        <div class="col-4 mt-2">
+          <%= f.text_area :message, class: 'form-control' %>
+        </div>
+        <div class="col-6"></div>
+
+        <div class="col-2"></div>
+        <div class="col-4 mt-2">
+          <%= f.submit '確認画面へ', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
