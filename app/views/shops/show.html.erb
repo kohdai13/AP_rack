@@ -4,6 +4,14 @@
     <div class="col-md-8">
       <table class="table table-bordered border-dark">
         <tr class="brown-border">
+          <td class="table-secondary">投稿者</td>
+          <td>
+            <%= link_to user_path(@user), class: "link" do %>
+              <%= @user.nickname %>
+            <% end %>
+          </td>
+        </tr>
+        <tr class="brown-border">
           <td class="table-secondary">ショップ画像</td>
           <td><%= image_tag @shop.shop_image, size:'200x150' %></td>
         </tr>
