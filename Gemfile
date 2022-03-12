@@ -59,3 +59,5 @@ gem 'kaminari','~> 1.2.1'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 gem "enum_help"
+
+gem 'dotenv-rails'

@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  get "search" => "searches#search"
-  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get   'inquiry'         => 'inquiry#index'
+  post  'inquiry/confirm' => 'inquiry#confirm'
+  post  'inquiry/thanks'  => 'inquiry#thanks'
+
+  get "search" => "searches#search"
+
+  devise_for :users
+
   root 'homes#top'
   get 'about' => 'homes#about'
 
