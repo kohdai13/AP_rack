@@ -1,5 +1,5 @@
 <div class="container my-5">
-  <h2>お気に入り一覧</h2>
+  <h2 class="title-text">お気に入り一覧</h2>
   <div class="row">
     <% @shops.each do |shop| %>
       <% if user_signed_in? && Favorite.favorite_method(shop, current_user) %>
