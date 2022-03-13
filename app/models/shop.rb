@@ -22,8 +22,15 @@ class Shop < ApplicationRecord
   end
 
   def self.looks(search, word)
-    @shop = Shop.all
+    if search == "perfect_match"
+      @shop = Shop.where("name LIKE? OR address like? OR brand like?", "#{word}", "#{word}", "#{word}" )
+    elsif search == "partial_match"
+      @shop = Shop.where("name LIKE? OR address like? OR brand like?", "%#{word}%", "%#{word}%", "%#{word}%" )
+    else
+      @shop = Shop.all
+    end
   end
+
 
   #Google map表示機能
   geocoded_by :address

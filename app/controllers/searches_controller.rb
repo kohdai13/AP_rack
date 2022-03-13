@@ -2,6 +2,7 @@ class SearchesController < ApplicationController
   before_action :authenticate_user!
 
   def search
-    @shops = Shop.where(name: params[:word])
+    @range = params[:range]
+    @shops = Shop.looks(params[:search], params[:word])
   end
 end
