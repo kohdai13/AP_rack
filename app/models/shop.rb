@@ -10,18 +10,23 @@ class Shop < ApplicationRecord
   validates :brand, presence: true
 
 
+
   def shop_image
     image.attached? ? image : 'no_image.jpg'
   end
 
 
   def favorited_by?(user)
-  
+
     favorites.exists?(user_id: user.id)
   end
-  
+
   def self.looks(search, word)
     @shop = Shop.all
   end
-  
+
+  #Google map表示機能
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 end

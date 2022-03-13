@@ -61,3 +61,5 @@ gem 'jquery-rails'
 gem "enum_help"
 
 gem 'dotenv-rails'
+
+gem "geocoder"
