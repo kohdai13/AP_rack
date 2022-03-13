@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit, :update]
+
 
 
   def new
@@ -57,11 +57,6 @@ class ShopsController < ApplicationController
   def shop_params
     params.require(:shop).permit(:name, :address, :genre, :brand, :rate, :description, :latitude, :longitude, :image)
   end
-  
-  def ensure_correct_user
-    @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to user_path(current_user)
-    end
-  end
+
+
 end
