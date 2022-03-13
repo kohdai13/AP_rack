@@ -97,8 +97,8 @@
       </table>
       <div>
         <% if @shop.user == current_user %>
-          <%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-sm btn-success edit_shop_#{@shop.id}" %>
-          <%= link_to 'Destroy', @shop, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_shop_#{@shop.id}"%>
+          <%= link_to '投稿を編集する', edit_shop_path(@shop), class: "btn btn-sm btn-success edit_shop_#{@shop.id}" %>
+          <%= link_to '投稿を削除する', @shop, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_shop_#{@shop.id}"%>
         <% end %>
       </div>
     </div>
