@@ -9,8 +9,12 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
 import "jquery"
-window.$ = window.jQuery = require('jquery');
+
+global.$ = require('jquery');
+window.$ = require('jquery');
+
 require('packs/raty')
+require('packs/slick') //追記
 
 
 Rails.start()
