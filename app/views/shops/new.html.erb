@@ -25,7 +25,7 @@
           <%= f.label :ショップのジャンル, class: 'mt-1' %>
         </div>
         <div class="col-4 mt-2">
-          <%= f.select :genre, ['旗艦店', 'セレクトショップ', '古着屋'], {include_blank: 'ジャンル選択ボックス'}, class: 'sample' %>
+          <%= f.select :genre, ['旗艦店', 'セレクトショップ', '古着屋', 'その他'], {include_blank: 'ジャンル選択ボックス'}, class: 'sample' %>
         </div>
         <div class="col-6"></div>
 
@@ -38,7 +38,7 @@
         <div class="col-6"></div>
 
         <div class="col-2 mt-2">
-          <%= f.label :ショップの取扱ブランド, class: 'mt-1' %>
+          <%= f.label :ショップの取扱ブランド（購入ブランド）, class: 'mt-1' %>
         </div>
         <div class="col-4 mt-2">
           <%= f.text_area :brand, class: 'form-control' %>
