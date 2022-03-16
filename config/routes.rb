@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   #論理削除用のルーティング
   patch '/users/:id/withdraw' => 'users#withdraw', as: 'withdraw'
 
+  resources :notifications, only: [:index, :destroy]
+
 
 end

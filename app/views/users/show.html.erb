@@ -15,12 +15,22 @@
         </tr>
       </table>
       <% if @user == current_user %>
-        <%= link_to edit_user_path(@user), class: "btn btn-outline-info" do %>
+        <%= link_to edit_user_path(@user), class: "text-dark" do %>
           <i class="fas fa-user-cog"></i>プロフィール編集<br>
         <% end %>
-        <%= link_to user_favorites_path(@user) ,class: "btn btn-outline-info" do %>
-          <i class="fas fa-star"></i>お気に入り一覧
-        <% end %>
+        <div>
+          <%= link_to user_favorites_path(@user), class: "text-dark" do %>
+            <i class="fas fa-star"></i>お気に入り一覧
+          <% end %>
+        </div>
+        <div>
+          <% if unchecked_notifications.any? %>
+            <i class="fa fa-circle" style="color: gold;"></i>
+          <% end %>
+          <%= link_to notifications_path, class: "text-dark" do %>
+            <i class="fa-solid fa-bell"></i>通知一覧
+          <% end %>
+        </div>
       <% end %>
     </div>
     <div class="col-9">
