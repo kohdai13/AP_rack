@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :shop_comments, only: [:create, :destroy]
   end
 
+  resources :ranks, only: [:index]
+
   resources :users, only: [:index,:show,:edit,:update] do
     resources :favorites, only: [:index]
   end
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
   #論理削除用のルーティング
   patch '/users/:id/withdraw' => 'users#withdraw', as: 'withdraw'
 
-  resources :notifications, only: [:index, :destroy]
+  resources :notifications, only: [:index]
 
 
 end

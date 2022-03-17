@@ -1,17 +1,17 @@
 <%= render 'searches/search' %>
 <div class="container my-5">
-  <h2 class="title-text">ショップ一覧</h2>
-  <%= link_to ranks_path, class: 'text-dark' do %>
-    <i class="fas fa-crown">お気に入り登録数ランキング</i>
-  <% end %>
+  <h2 class="title-text">お気に入り登録数ランキング</h2>
   <div class="row">
-    <% @shops.each do |shop| %>
-  		<div class="col-lg-4 col-md-5 mb-4">
+    <% @shop_favorite_ranks.each.with_index(1) do |shop, i| %>
+  		<div class="col-3">
+  		  第<%= i  %>位
   		  <%= link_to shop_path(shop) do %>
           <%= image_tag shop.shop_image, size: "200x150" %>
         <% end %>
-        <table class="table-box">
-          <tr >
+      </div>
+      <div class="col-7">
+        <table class="table-box-rank">
+          <tr>
             <th>ショップ</th>
             <td><%= shop.name %></td>
           </tr>
@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <th>評価</th>
-            <td><%= render "static_rate", shop: shop %></td>
+            <td><%= render "shops/static_rate", shop: shop %></td>
           </tr>
           <tr>
             <th>お気に入り</th>
@@ -40,8 +40,5 @@
         </table>
       </div>
     <% end %>
-    <div class="paginate">
-      <%= paginate @shops %>
-    </div>
   </div>
 </div>
