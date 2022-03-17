@@ -8,8 +8,10 @@ class Shop < ApplicationRecord
   has_one_attached :image
 
   validates :name, presence: true
+  validates :genre, presence: true
   validates :address, presence: true
   validates :brand, presence: true
+  validates :description, presence: true
 
 
 

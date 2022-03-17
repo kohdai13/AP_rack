@@ -24,19 +24,6 @@
         <div class="col-6"></div>
 
         <div class="col-2 m-auto">
-          <%= f.label :性別 %>
-        </div>
-        <div class="col-4 mt-2">
-          <%= form_with(model: @user, local: true) do |form| %>
-            <%= form.radio_button :gender, :male, checked: true %>
-            <%= form.label :gender, "男性", {value: :male, style: "display: inline-block;"} %>
-            <%= form.radio_button :gender, :female %>
-            <%= form.label :gender, "女性", {value: :female, style: "display: inline-block;"} %>
-          <% end %>
-        </div>
-        <div class="col-6"></div>
-
-        <div class="col-2 m-auto">
           <%= f.label :自己紹介 %>
         </div>
         <div class="col-4 mt-2">

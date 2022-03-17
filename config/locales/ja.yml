@@ -35,10 +35,26 @@ ja:
       over_x_years:
         one:   "1年以上"
         other: "%{count}年以上"
-        
+
   views:
     pagination:
       first: "≪"
       previous: "<"
       next: ">"
       last: "≫"
+
+  activerecord:
+   attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        name: 名前
+        nickname: ニックネーム
+        gender: 性別
+        introduction: 自己紹介
+      shop:
+        name: ショップ名
+        genre: ショップのジャンル
+        address: ショップのアドレス
+        brand: ショップのブランド
+        description: 口コミ

@@ -5,6 +5,10 @@
        <strong class="red-border my-3">会員の方はこちらからログイン</strong>
     </div>
   </div>
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
   <div class="row my-3">
     <div class="offset-3 col-4">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
