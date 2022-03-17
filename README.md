@@ -23,12 +23,12 @@
 - あなたが住んでいる地域や旅行先でアパレルショップを探したい時
 
 ## 設計書
-- 詳細設計
+- 詳細設計<br>
 https://docs.google.com/spreadsheets/d/1RSe93cV2y7QM2k1tdLF-SJhWBxbImCoDRWGlNBgSu50/edit#gid=2133469642
-- テーブル定義書
+- テーブル定義書<br>
 https://docs.google.com/spreadsheets/d/1753fo9EJGWgABcyOjP8aqbGlXuUX3geMCF_ZtTxRPks/edit#gid=2019997431
-- ER図
-Untitled Diagram-PF AS_RACK.drawio.pdf
+- ER図<br>
+https://drive.google.com/file/d/1y6STL9HhH4eqspyE2MOZgAMQQx6rsR-Y/view?usp=sharing
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1tgmzTs1eN65rbMFDLnwtJIdQEj8RIgmJVHwi5sYNi8I/edit#gid=0>
