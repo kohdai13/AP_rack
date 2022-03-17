@@ -18,7 +18,7 @@ class ShopsController < ApplicationController
   end
 
   def index
-    @shops = Shop.all.page(params[:page]).per(8)
+    @shops = Shop.all.page(params[:page]).per(9)
   end
 
   def show
