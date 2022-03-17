@@ -41,4 +41,5 @@ https://drive.google.com/file/d/1y6STL9HhH4eqspyE2MOZgAMQQx6rsR-Y/view?usp=shari
 - IDE：Cloud9
 
 ## 使用素材
-- 後ほど追記
+- O-DAN(https://o-dan.net/ja/)
+- Hatchful(https://hatchful.shopify.com/ja/)
