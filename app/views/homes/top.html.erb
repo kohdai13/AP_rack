@@ -1,11 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
-    
+
 
     <div class="slider">
-      <div><img class="img" src="assets/top.jpg"></div>
-      <div><img class="img" src="assets/top2.jpg"></div>
-      <div><img class="img" src="assets/top3.jpg"></div>
+      <!--<div><img class="img" src="assets/top.jpg"></div>-->
+      <!--<div><img class="img" src="assets/top2.jpg"></div>-->
+      <!--<div><img class="img" src="assets/top3.jpg"></div>-->
+      <div><%= image_tag 'top.jpg', class: 'sized'  %></div>
+      <div><%= image_tag 'top2.jpg', class: 'sized'  %></div>
+      <div><%= image_tag 'top3.jpg', class: 'sized'  %></div>
     </div>
     <div class="top-text">
       <% if user_signed_in? %>
