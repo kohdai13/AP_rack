@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
 
   def index
-    @shops = Shop.all.page(params[:page]).per(8)
+    @shops = Shop.page(params[:page]).per(8)
   end
 
   def create
