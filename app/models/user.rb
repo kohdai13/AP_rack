@@ -15,8 +15,8 @@ class User < ApplicationRecord
   has_one_attached :profile_image
 
   validates :name, presence: true
-  validates :nickname, presence: true
-  validates :introduction, presence: true
+  validates :nickname, length: { minimum: 2, maximum: 20 }, uniqueness: true
+  validates :introduction, presence: true, length: {maximum: 50}
 
 
   # is_deletedがfalseならtrueを返すようにしている

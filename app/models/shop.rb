@@ -11,7 +11,7 @@ class Shop < ApplicationRecord
   validates :genre, presence: true
   validates :address, presence: true
   validates :brand, presence: true
-  validates :description, presence: true
+  validates :description, presence: true,length:{maximum:200}
 
 
 
