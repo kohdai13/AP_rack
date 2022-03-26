@@ -7,7 +7,7 @@
   </div>
   <%= form_with model:@user, local:true do |f| %>
     <div class="row d-flex justify-content-start mt-3">
-      <!--プロフィール画像の列-->
+      
       <div class="col-2 mt-2">
         <%= f.label :プロフィール画像, class: 'mt-1' %>
       </div>
@@ -16,7 +16,6 @@
       </div>
       <div class="col-6"></div>
 
-      <!--名前の列-->
       <div class="col-2 mt-2">
         <%= f.label :ニックネーム, class: 'mt-1' %>
       </div>
@@ -25,7 +24,6 @@
       </div>
       <div class="col-6"></div>
 
-      <!--メールアドレスの列-->
       <div class="col-2 mt-2">
         <%= f.label :メールアドレス, class: 'mt-1' %>
       </div>
@@ -34,7 +32,6 @@
       </div>
       <div class="col-6"></div>
 
-      <!--自己紹介文の列-->
       <div class="col-2 mt-2">
         <%= f.label :自己紹介文, class: 'mt-1' %>
       </div>
@@ -43,7 +40,6 @@
       </div>
       <div class="col-6"></div>
 
-      <!--確認ボタン、退会ボタンの列-->
       <div class="col-2"></div>
       <div class="col-4 mt-2">
         <div class="d-flex bd-highlight mb-3">
