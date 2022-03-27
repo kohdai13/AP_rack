@@ -280,7 +280,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.7)
   jquery-rails
-  kaminari (~> 1.2.1)
+  kaminari (= 1.2.2)
   listen (~> 3.3)
   mysql2
   puma (~> 3.11)

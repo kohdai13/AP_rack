@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :shops, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_shops, through: :favorites, source: :shop
   has_many :shop_comments, dependent: :destroy
 
   has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
