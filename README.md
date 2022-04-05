@@ -1,5 +1,5 @@
 # ApparelShopRACK（アパレルショップラック）
-![pinterest_board_photo](https://user-images.githubusercontent.com/95622688/161740298-4fef6aa5-ead0-45f8-8133-e850f43a6df6.png)
+![pinterest_profile_image](https://user-images.githubusercontent.com/95622688/161740612-9af7052c-bcea-4e6d-832f-9f51684e5adb.png)
 
 ## サイト概要
 全国の知られざるアパレルショップを見つけよう
